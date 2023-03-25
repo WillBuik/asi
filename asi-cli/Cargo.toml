@@ -1,0 +1,16 @@
+[package]
+name = "asi-cli"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "asi"
+path = "src/main.rs"
+
+[dependencies]
+byteorder = "1.4.3"
+clap = { version = "4.1.11", features = ["wrap_help", "derive"] }
+thiserror = "1.0.40"
+uds_windows = "1.0.2"

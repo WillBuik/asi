@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "asi-cli",
+    "asi-host",
+    "libasi-interop",
+    "userland",
+]

@@ -1,0 +1,23 @@
+[package]
+name = "host"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+libasi-interop = { path = "../libasi-interop" }
+anyhow = "1.0.69"
+async-trait = "0.1.67"
+byteorder = "1.4.3"
+ctrlc = { version = "3.2.5", features = ["termination"] }
+env_logger = "0.10.0"
+log = "0.4.17"
+oneshot = "0.1.5"
+serde = { version = "1.0.158", features = ["derive"] }
+serde_json = "1.0.94"
+thiserror = "1.0.40"
+uds_windows = "1.0.2"
+wasi-common = "6"
+wasmtime = "6.0.1"
+wasmtime-wasi = "6.0.1"
