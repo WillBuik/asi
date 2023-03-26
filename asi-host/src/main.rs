@@ -99,6 +99,10 @@ impl AsiBasicHost {
 
         let join = std::thread::spawn(move || {
             let result = entry.call(&mut store, ());
+
+            if let Err(err) = &result {
+                log::warn!("Program crashed: {}", err)
+            }
             
             result
         });

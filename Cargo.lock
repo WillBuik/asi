@@ -813,6 +813,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "884e2677b40cc8c339eaefcb701c32ef1fd2493d71118dc0ca4b6a736c93bd67"
 
 [[package]]
+name = "libasi"
+version = "0.1.0"
+dependencies = [
+ "libasi-interop",
+ "log",
+ "serde_json",
+]
+
+[[package]]
 name = "libasi-interop"
 version = "0.1.0"
 dependencies = [
@@ -1569,7 +1578,7 @@ dependencies = [
 name = "userland"
 version = "0.1.0"
 dependencies = [
- "libasi-interop",
+ "libasi",
  "log",
  "serde",
  "serde_json",

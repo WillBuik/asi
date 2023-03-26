@@ -1,7 +1,7 @@
 use libasi_interop::diagnostics::LogRpcRequest;
 use log::{SetLoggerError, LevelFilter, Metadata, Record};
 
-use crate::libasi::rpc::rpc_call;
+use crate::rpc::rpc_call;
 
 struct AsiLogger;
 

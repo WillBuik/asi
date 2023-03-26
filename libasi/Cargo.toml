@@ -1,7 +1,7 @@
 cargo-features = ["per-package-target"]
 
 [package]
-name = "userland"
+name = "libasi"
 version = "0.1.0"
 edition = "2021"
 forced-target = "wasm32-wasi"
@@ -9,8 +9,6 @@ forced-target = "wasm32-wasi"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-libasi = { path = "../libasi" }
-log = "0.4.17"
-serde = { version = "1.0.158", features = ["derive"] }
+libasi-interop = { path = "../libasi-interop" }
 serde_json = "1.0.94"
-thiserror = "1.0.40"
+log = "0.4.17"

@@ -1,7 +1,3 @@
-use std::time::Instant;
-
-pub mod libasi;
-
 fn main() {
     println!("Hello WASI");
 
@@ -11,11 +7,13 @@ fn main() {
     libasi::hello("sysreq");
 
     log::info!("{:?}", libasi::net::lookup("miats.com:80"));
+    
+    log::info!("done");
 
-    let start = Instant::now();
+    let start = std::time::Instant::now();
     for _ in 0..225000 {
         libasi::poke();
     }
-    let bench = Instant::now() - start;
+    let bench = std::time::Instant::now() - start;
     log::info!("Duration: {}", bench.as_secs_f32())
 }

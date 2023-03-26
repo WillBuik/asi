@@ -2,6 +2,7 @@
 members = [
     "asi-cli",
     "asi-host",
+    "libasi",
     "libasi-interop",
     "userland",
 ]

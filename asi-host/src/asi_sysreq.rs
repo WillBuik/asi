@@ -1,6 +1,6 @@
 use std::{cmp::min, mem::size_of, net::ToSocketAddrs};
 
-use libasi_interop::{AsiRpcError, RpcRequest, diagnostics::{HelloRpcRequest, PokeRpcRequest, LogRpcRequest}, net::{ConnectRpcRequest, LookupRpcRequest, NetError}};
+use libasi_interop::{AsiRpcError, RpcRequest, diagnostics::{HelloRpcRequest, PokeRpcRequest, LogRpcRequest}, net::{ConnectRpcRequest, LookupRpcRequest, NetError, ConnectAddrs}};
 use serde::Serialize;
 use wasi_common::{WasiFile, file::FileType, Error, snapshots::preview_1::types::Errno};
 pub struct AsiSysreqDevice {
@@ -50,8 +50,10 @@ impl AsiSysreqDevice {
         Ok(self.count)
     }
 
-    fn net_connect(&mut self, _connect: ConnectRpcRequest) -> Result<<ConnectRpcRequest as RpcRequest>::Response, AsiRpcError> {
-        Err(AsiRpcError::BadRequest)
+    fn net_connect(&mut self, connect: ConnectRpcRequest) -> Result<<ConnectRpcRequest as RpcRequest>::Response, AsiRpcError> {
+        match connect.target {
+            ConnectAddrs::Tcp { addrs: _ } => Err(AsiRpcError::BadRequest),
+        }
     }
 
     fn net_lookup(&mut self, lookup: LookupRpcRequest) -> Result<<LookupRpcRequest as RpcRequest>::Response, AsiRpcError> {
