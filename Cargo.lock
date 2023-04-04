@@ -235,6 +235,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "compiler_builtins"
+version = "0.1.90"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a3ca0978cbe31e8ed82689ddb9e97f2839b006f9773c16d85be98d5e9f18673d"
+
+[[package]]
 name = "cpp_demangle"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -825,6 +831,9 @@ dependencies = [
 name = "libasi-interop"
 version = "0.1.0"
 dependencies = [
+ "compiler_builtins",
+ "rustc-std-workspace-alloc",
+ "rustc-std-workspace-core",
  "serde",
  "thiserror",
 ]
@@ -1181,6 +1190,18 @@ name = "rustc-demangle"
 version = "0.1.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d4a36c42d1873f9a77c53bde094f9664d9891bc604a45b4798fd2c389ed12e5b"
+
+[[package]]
+name = "rustc-std-workspace-alloc"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ff66d57013a5686e1917ed6a025d54dd591fcda71a41fe07edf4d16726aefa86"
+
+[[package]]
+name = "rustc-std-workspace-core"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1956f5517128a2b6f23ab2dadf1a976f4f5b27962e7724c2bf3d45e539ec098c"
 
 [[package]]
 name = "rustix"

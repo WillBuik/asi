@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-libasi-interop = { path = "../libasi-interop" }
+libasi-interop = { path = "../libasi-interop", features = ["std"], default-features = false }
 anyhow = "1.0.69"
 async-trait = "0.1.67"
 byteorder = "1.4.3"
